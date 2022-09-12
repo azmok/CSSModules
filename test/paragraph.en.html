@@ -35,9 +35,25 @@
    </ol>
    <p>IsoSubspace is mostly a simplified CompleteSubspace, so we will ignore it for the purpose of this post. CompleteSubspace is the one that handles the common case: small allocations, and PreciseAllocation is mostly the rare slow path for large allocations.</p>
    
+   <figure>
+      <img src="../src/unsplash-1.jpg" alt="test image" class="fullwidth" />
+      <figcaption>
+         <a href="https://unsplash.com/photos/GHIZp1rgV0A">Thanks to Andrew Valdivia @donovan_valdivia for making this photo available freely on Unsplash 🎁</a>
+      </figcaption>
+   </figure>
+   <figure>
+      <img src="../src/unsplash-2.jpg" alt="test image" class="fullwidth" />
+      <figcaption>
+         <a href="https://unsplash.com/photos/kRom8b8Il_Y">Thanks to OPPO Find X5 Pro @oppofindx5pro for making this photo available freely on Unsplash 🎁</a>
+      </figcaption>
+   </figure>
+   
+   <p>In August, 164,685 images were submitted to the library. Here are 12 fabulous images that caught the eye of the Unsplash submissions team this past month — from an up-close volcano eruption to crazy lighting effects from a drone.</p>
+
+   
    
    <h2>Generational GC Basics</h2>
-   <p>In JSC’s generational GC model, the heap consists of a small “new space” (eden), holding the newly allocated objects, and a large “old space” holding the older objects that have survived one GC cycle. Each GC cycle is either an eden GC or a full GC. New objects are allocated in the eden. When the eden is full, an eden GC is invoked to garbage-collect the unreachable objects in eden. All the surviving objects in eden are then considered to be in the old space[11]. To reclaim objects in the old space, a full GC is needed.
+   <p>In JSC’s generational GC model, the heap consists of a small “new space” (eden), holding the newly allocated objects, and a large “old space” holding the older objects that have survived one GC cycle. Each GC cycle is either an eden GC or a full    GC. New objects are allocated in the eden. When the eden is full, an eden GC is invoked to garbage-collect the unreachable objects in eden. All the surviving objects in eden are then considered to be in the old space[11]. To reclaim objects in the old space, a full GC is needed.
    </p>
    <pre class="language-js" data-line="3"><code>let age = prompt("What is your age?", 18);
 
