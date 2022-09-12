@@ -1,0 +1,50 @@
+.card.main.text{
+   padding-left: 6rem;
+   padding-right: 6rem;
+   padding-bottom: 6rem;
+}
+
+/* iPad.portrait */
+@media (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  
+}
+/* iPad.landscape*/
+@media (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+   .card.main{
+      width: 800px;
+   }
+}
+
+.mgb0{
+   margin-bottom: 0 !important;
+}
+/*************
+ * SmartPhone
+ *******/
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+      .card.main.text{
+         padding: 1rem;
+      }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+}/**/
