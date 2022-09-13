@@ -1,5 +1,6 @@
 :root{
-   /* jp:
+   /**
+      jp:
          Sans:
             Noto Sans JP
          Serif:
@@ -13,9 +14,7 @@
             Source Serif 4
          Mono:
             Fira Code
-         
-         
-    */
+    **/
    --font-sans: 'Roboto', sans-serif;
    --font-sans-jp: 'Roboto', 'Noto Sans JP', sans-serif;
    

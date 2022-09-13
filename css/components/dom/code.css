@@ -1,3 +1,9 @@
+@import '../../../lib/Prism.js/okaidia.css';
+@import '../../../lib/Prism.js/plugins/line-numbers/line-numbers.min.css';
+@import '../../../lib/Prism.js/plugins/line-highlight/line-highlight.css';
+
+
+
 /* pre */
 pre{
    font-size: 1.125rem !important;
@@ -35,9 +41,9 @@ pre > code:not([class*="language-"]){
 }
 
 /* no class pre:has( code(no-class) ) */
+/* no class `pre > code` */
 pre:not([class*="language-"]) > code,
 pre > code:not([class*="language-"]),
-/* no class `pre > code` */
 pre:has( code:not([class*="language-"]) ){
    letter-spacing: -0.04em;
    font-weight: 300;

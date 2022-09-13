@@ -13,6 +13,7 @@ figure figcaption *{
    font-weight: 300;
    font-style: italic;
 }
+
 figure figcaption{
    padding-top: 1em;
    text-align: right;

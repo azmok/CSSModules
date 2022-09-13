@@ -17,7 +17,6 @@ body en{
    word-spacing: -0.0125rem;
    margin-left: 0.1em;
 }
-/* all except headings */
 
 /* headings */
 body .en h1,
@@ -31,12 +30,12 @@ body en h2,
 body en h3,
 body en h4,
 body en h5,
-body en h6{/*
-   line-height: 1.6;*/
+body en h6{
    letter-spacing: 0;
    line-height: 1.26;
    font-size: inherit;
 }
+
 body h1.en,
 body h2.en,
 body h3.en,
@@ -44,12 +43,10 @@ body h4.en,
 body h5.en,
 body h6.en{
    font-weight: 700;
-   
    letter-spacing: -0.0125rem;
    word-spacing: -0.0125rem;
    line-height: inherit;
 }
-
 
 body h1 .en,
 body h2 .en,
@@ -70,7 +67,6 @@ body h6 en{
    font-size: calc(100% * 1.25);
 }
 
-
 body .en h1,
 body h1.en{
    margin-top: 12.25rem;
@@ -90,7 +86,6 @@ body h3.en{
    font-size: 1.4375rem;
 }
 
-
    /* margin-bottom */
 body .en h1.mgb,
 body h1.en.mgb{
@@ -107,8 +102,6 @@ body h3.mgb{
    margin-bottom: 1.53125rem;
 }
 
-
-
 /* blockquote */
 body .en figure *,
 body figure.en *,
@@ -120,9 +113,11 @@ body figure .en{
    font-size: 1.0625rem;
    font-weight: 300;
 }
+
 body figure b{
    font-weight: 400 !important;
 }
+
 /* epigraph hedings */
 body .en .epigraph{
    font-family: var(--font-serif) !important;

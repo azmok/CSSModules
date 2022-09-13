@@ -11,7 +11,6 @@
    background: linear-gradient(90deg, #1DE5E2, #B588F7);
 }
 
-
 .mono1{ /* yellow */
    background: linear-gradient(90deg, #FFE324, #FFB533);
 }
@@ -29,7 +28,7 @@
 }
 
 /***
- * background-clip must be positioned at last
+ * `background-clip` must be positioned after `background-color`
  **/
 .grad{/* purple-orange */
    background-clip: text;

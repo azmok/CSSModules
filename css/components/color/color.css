@@ -89,8 +89,3 @@ figure figcaption,
 figure figcaption a{
    color: var(--slate-800);
 }
-
-.note{
-   background: var(--amber-50);
-   border-left: 8px solid var(--amber-300);
-}

@@ -6,8 +6,6 @@
    --dark-tx-color: #c4c4c4;
 }
 
-
-
 html.dark{
    background: var(--dark-bg-color) !important;
    color: var(--dark-tx-color) ! important;
@@ -26,11 +24,6 @@ html.dark ul li::before {
 
 html.dark figure *{
    color: var(--dark-tx-color) !important;
-}
-
-html.dark .note{
-   background: var(--amber-dark-bg) !important;
-   border-left: 8px solid var(--amber-dark-border);
 }
 
 html.dark *:not(pre) > code{
@@ -73,4 +66,4 @@ html.dark pre:has(code){
    html figure figcaption a{
       background: linear-gradient(transparent 96%, var(--zinc-400) 0%);
    }
-   }/**/
+}/**/

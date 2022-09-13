@@ -1,4 +1,4 @@
-import { _, create, setAttr, setCss, setText, $$ } from './autil-1.0.4.mod.js'
+import { _, create, setAttr, setCss, setText, $$ } from './../../js/autil-1.0.4.mod.js'
 
 
 /* <!--

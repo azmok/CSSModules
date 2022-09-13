@@ -1,10 +1,4 @@
-@import 'components/_ini.css';
+@import 'components/barebone/_ini.css';
 @import 'components/dom/_ini.css';
 @import 'components/lang/_ini.css';
 @import 'components/color/_ini.css';
-@import 'components/modules/_ini.css';
-
-
-@import '../lib/Prism.js/okaidia.css';
-@import '../lib/Prism.js/plugins/line-numbers/line-numbers.min.css';
-@import '../lib/Prism.js/plugins/line-highlight/line-highlight.css';

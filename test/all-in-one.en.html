@@ -7,6 +7,10 @@
    <link rel="stylesheet" href="../css/_ini.css" />
    <script type="module" src="../js/_ini.js" defer></script>
    
+   <script type="module" src="../lib/Prism.js/_ini.js" defer></script>
+   <script type="module" src="../modules/_ini.js" defer></script>
+   
+   
    <title>Document</title>
 </head>
 <body class="line-numbers">
@@ -64,7 +68,7 @@ welcome();</code></pre>
    <p>The effectiveness of the above scheme <code>() => console.log("hi")</code> relies on the so-called “generational hypothesis”:</p>
    <p>Pointers from old space to eden is much rarer than pointers from eden to old space or pointers from eden to eden, so an eden GC’s runtime is approximately linear to the size of the eden, as it only needs to start from a small subset of the old space. This implies that the cost of GC can be amortized by the cost of allocation.</p>
    
-   <div class="note">Memory allocators and GCs are tightly coupled by nature – the allocator allocates memory to be reclaimed by the GC, and the GC frees memory to be reused by the allocator. In this section, we will briefly introduce JSC’s memory allocators.
+   <div class="label">Memory allocators and GCs are tightly coupled by nature – the allocator allocates memory to be reclaimed by the GC, and the GC frees memory to be reused by the allocator. In this section, we will briefly introduce JSC’s memory allocators.
 
    At</div>
    <h3>Practically every GC scheme uses some kind of metadata to track which objects are alive</h3>

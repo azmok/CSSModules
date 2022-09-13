@@ -7,7 +7,3 @@
 html{
    font-size: var(--scale-16);
 }
-
-.note .en{
-   font-size: 1.0625em;
-}
