@@ -1,5 +1,6 @@
-@import '../css/_ini.css';
-
+@import '../../css/components/color/_ini.css';
+@import '../../css/components/dom/paragraph.css';
+@import '../../css/components/barebone/layout.css';
 
 
 .label{
@@ -7,7 +8,7 @@
    font-size: 0.9375em;
    width: calc(100% + 4rem);
    transform: translateX(-2rem);
-   box-sizing: padding-box;
+   box-sizing: border-box;
    margin-top: 2.0625em;
    background: var(--amber-50);
    border-left: 8px solid var(--amber-300);
