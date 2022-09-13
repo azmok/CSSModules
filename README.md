@@ -7,8 +7,8 @@ As for design, this package's typographical design(typography, space, layout, ..
 
 
 Others influenced me: 
-- [Craft.app](https://www.craft.do) —beautiful text gradient
-- [Tailwind Css](https://tailwindcss.com) —Color Schemes
+- [Craft app](https://www.craft.do) —beautiful text gradient
+- [Tailwind CSS](https://tailwindcss.com) —Color Schemes
 
 
 
