@@ -20,7 +20,7 @@ For Japanes developers wrting articles or managing bloging website without hussl
 2. Rendered Japanese only pragraph and English only paragraph in same web page that css font-size is 16px looks very different size and odd.
 3. When designing the web page, typography and typography-related css styling is crutial for comfortable reading without any disruption that ugly layout or unbalanced coloring gave to readers.
 4. I want simple, minimal css styled design when writing article for programming that page contain English and Japanese. No-styled, uncomfortable css styling webpage made me feel bad when writing, too.
-5. font and line-height, and letter-spacing, and word-spacing, and other spacing have strong relationship for comfortable visual design. So, I think one font must stick to one line-heigh, letter-spacing and so on. And if you use different font, must change line-height ans the others for matching the font.
+5. font and line-height, and letter-spacing, and word-spacing, and other spacing have strong relationship for comfortable visual design. So, I think one font must stick to one line-heigh, letter-spacing and so on. And if you use different font, must change line-height and the others for matching the font.
 
 # Example
 ## No-styling
@@ -35,7 +35,7 @@ Environment: iPad Air 3, Textastic
 
 exmaple html file is under /test folder.
 
-### Styled with CSS Module  
-`/test/styling.CSSModule.ja-en-mixed.html`
-### No-styling
+- No-styling  
 `/test/styling.no.ja-en-mixed.html`
+- Styled with CSS Module  
+`/test/styling.CSSModule.ja-en-mixed.html`
