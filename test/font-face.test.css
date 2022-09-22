@@ -2,7 +2,7 @@
 
 
 
-p[class*='w-']::before,
+[class*='w-']::before,
 i::before{
    position: absolute;
    transform: translateY(-100%);
@@ -12,7 +12,7 @@ i::before{
 }
 /* font-weight */
    /* label */
-p[class*='w-']::before{
+[class*='w-']::before{
    color: #fff;
    background: orange;
 }

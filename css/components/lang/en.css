@@ -4,7 +4,7 @@
 
 body .en,
 body en{
-   font-family: var(--font-sans);
+   font-family: var(--font-sans) !important;
    overflow-wrap: break-word;
    word-break: break-word;
    -webkit-hyphens: auto;
@@ -34,6 +34,7 @@ body en h6{
    letter-spacing: 0;
    line-height: 1.26;
    font-size: inherit;
+   font-weight: 700;
 }
 
 body h1.en,
