@@ -15,9 +15,8 @@
          Mono:
             Fira Code
     **/
-   --font-sans: 'Roboto', sans-serif;/*
-   --font-sans-jp: 'Roboto', 'Noto Sans JP', sans-serif;/**/
-   --font-sans-jp: serif, 'Roboto', 'Noto Sans JP', sans-serif;
+    --font-sans: 'Roboto', sans-serif;
+   --font-sans-jp: 'Roboto', 'Noto Sans JP', sans-serif;
    
    --font-serif: 'Source Serif 4', serif;
    --font-serif-jp: 'Source Serif 4', 'Noto Serif JP', serif;
