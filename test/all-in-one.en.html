@@ -9,7 +9,7 @@
    
    <script type="module" src="../lib/Prism.js/_ini.js" defer></script>
    <script type="module" src="../modules/_ini.js" defer></script>
-   
+   <script src="a.js" defer></script>
    
    <title>Document</title>
 </head>
@@ -24,6 +24,7 @@
    </ul>
 
 
+   <p style="font-family: -apple-system;">Filip Pizlo’s blog post on GC is great at explaining the novelties of JSC’s GC, and also positions it within the context of various GC schemes in academia and industry. However, as someone with little GC background, I felt the blog alone insufficient for me to get a solid understanding of the algorithm and the motivation behind the design. Through digging into the code, and with some great help from Saam Barati, one of JSC’s lead developers, I wrote up this blog post in the hope that it can help more people understand this beautiful design.</p>
    <p>Filip Pizlo’s blog post on GC is great at explaining the novelties of JSC’s GC, and also positions it within the context of various GC schemes in academia and industry. However, as someone with little GC background, I felt the blog alone insufficient for me to get a solid understanding of the algorithm and the motivation behind the design. Through digging into the code, and with some great help from Saam Barati, one of JSC’s lead developers, I wrote up this blog post in the hope that it can help more people understand this beautiful design.</p>
    <ul>
       <li>CompleteSubspace: this is a segregated allocator responsible for allocating small objects (max size about 8KB).</li>
