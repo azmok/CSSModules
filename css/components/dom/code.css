@@ -51,5 +51,8 @@ pre:has( code:not([class*="language-"]) ){
 
 pre:has(code){
    background: #272822 !important;
+}
+pre:has(code),
+code{
    line-height: 1.4;
 }
