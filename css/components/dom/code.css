@@ -49,20 +49,3 @@ pre:has( code:not([class*="language-"]) ){
    letter-spacing: -0.04em;
    font-weight: 300;
 }
-
-/*** for line-nunbers 
- if( line-height > 1.2 ), line-number <span> height and
-   lines layout mismatching occur.
- */
-
-pre:has(code),
-pre:has(code) > code {
-   line-height: 1.2;
-}
-
-/* fix for line-number <span> height and
-lines layout mismatching */
-pre *{
-   border: 1px solid transparent;
-}
-
