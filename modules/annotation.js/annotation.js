@@ -45,7 +45,7 @@ Array.from(annos).map(anno => {
    
    anno.addEventListener('click', (e)=>{
       e.preventDefault()
-      
+      _(1)
       const className = desc.className
       // in visible
       if( className.includes('visible') ){

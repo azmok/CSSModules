@@ -5,23 +5,21 @@ import { _, create, setAttr, appendTo } from
 
 
 import './toc.js/_ini.js'
-import './annotation.js/_ini.js'
+// import './annotation.js/_ini.js'
 //import './darkModeSwitcher.js/_ini.js'
 
 /* relative to `.html` file that <link rel="stylesheet" ...> tag will be added */
-const url_label_css = '/iCloud/azmtuts.blog/pkg/CSSModules@azmok/modules/label.css/_ini.css',
-head = document.head
+const url_label_css = '/iCloud/azmtuts.blog/pkg/CSSModules@azmok/modules/label.css/_ini.css'
 // css
 create('link')
    .setAttr({
       rel: "stylesheet",
       href: url_label_css,
    })
-   .appendTo(head)
-/**/
+   .appendTo(document.head)
 
 
-
+// darkModeSwitcher
 const counterStore = (initVal) => {
    let count = initVal
    
@@ -33,18 +31,12 @@ const counterStore = (initVal) => {
          return count
       }
    })
-}
-/*
-const counter = counterStore(0)
-_( counter.value() ) //
-counter.increment()
-_( counter.value() ) // 1
-/**/
-const counter = counterStore(0)
-
-
+},
+counter = counterStore(0)
 
 document.addEventListener('click', () => {
+   import('./annotation.js/_ini.js')
+   
    if( counter.value() === 0 ){
       //_( counter.value() )
       import('./darkModeSwitcher.js/_ini.js')
