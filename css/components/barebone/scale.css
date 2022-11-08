@@ -7,3 +7,29 @@
 html{
    font-size: var(--scale-16);
 }
+
+.fsz-90{
+   font-size: 90%;
+}
+.fsz-80{
+   font-size: 80%;
+}
+
+.fsz-l{
+   font-size: 1.5rem;
+}
+.fsz-m{
+   font-size: 1.125rem;
+}
+.fsz-base{
+   font-size: 1rem;
+}
+.fsz-s{
+   font-size: 0.8125rem !important;
+}
+.fsz-xs{
+   font-size: 0.75rem !important;
+}
+body .main.text .title{
+   font-size: 2rem;
+}

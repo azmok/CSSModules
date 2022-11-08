@@ -1,12 +1,11 @@
 figure:has(blockquote){
    padding: 4rem 0 6rem 4rem;
-   
 }
 
-figure blockquote,
-figure blockquote *,
-figure figcaption,
-figure figcaption *{
+figure > blockquote,
+figure > blockquote *,
+figure > figcaption,
+figure > figcaption *{
    font-family: var(--font-serif-jp);
    font-size: 0.9375em;
    line-height: inherit;
@@ -15,8 +14,19 @@ figure figcaption *{
    font-style: italic;
 }
 
-figure figcaption{
+figure > figcaption{
    padding-top: 1em;
    text-align: right;
    padding-right: 3em;
+}/*
+figcaption{
+   border: 1px solid red;
+}/**/
+
+figure > blockquote > h2{
+   font-size: 2rem !important;
+   margin-top: 0 !important;
+}
+figure > blockquote.pre-wrap{
+   white-space: pre-wrap;
 }

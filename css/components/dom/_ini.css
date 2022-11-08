@@ -1,3 +1,6 @@
 @import 'blockquote.css';
 @import 'code.css';
 @import 'paragraph.css';
+@import 'table.css';
+@import 'output.css';
+@import 'checkbox.css';

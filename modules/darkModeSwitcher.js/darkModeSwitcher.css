@@ -1,21 +1,22 @@
-.switcher{
+.switcher-container{
    display: table;
    margin: 1rem 0.5rem 0 0;
    text-align: center;
    font-size: 0.6125rem;
+   font-family: sans-serif;
 }
 
-input[type='checkbox']{
+.switcher-container input[type='checkbox']{
    display: none;
 }
 
-.switcher-wrapper,
-.switcher-label,
+label.switcher-label,
+.label-wrapper,
 .switcher-button{
    display: block;
 }
 
-.switcher-wrapper{
+label.switcher-label{
    position: relative;
    user-select: none;
    cursor: pointer;
@@ -26,13 +27,13 @@ input[type='checkbox']{
    border: 2px solid #aaa;
 }
 
-.switcher-label,
+.label-wrapper,
 .switcher-button{
    position: absolute;
    transition: all 0.28s ease;
 }
 
-.switcher-label{
+.label-wrapper{
    top: 0;
    left: 0;
    z-index: 1;
@@ -82,11 +83,11 @@ input[type='checkbox']{
    background: #fff;
 }
 
-input[type='checkbox']:checked + .switcher-wrapper .switcher-label{
+.switcher-container input[type='checkbox']:checked + .switcher-label .label-wrapper{
    left: -100%;
 }
 
-input[type='checkbox']:checked + .switcher-wrapper .switcher-button{
+.switcher-container input[type='checkbox']:checked + .switcher-label .switcher-button{
    left: 0%;
    transform: translate(0%, -50%);
 }

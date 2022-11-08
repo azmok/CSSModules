@@ -1,33 +1,32 @@
-import { _, create, setAttr, setCss, setText, $$ } from './../../js/autil-1.0.4.mod.js'
+import { _, create, setAttr, setCss, setText, appendTo, $$ } from './../../js/autil-1.0.4.mod.js'
 
 
 /* <!--
-<div class="switcher">
+<div class="switcher-container">
 
-   <input type="checkbox" class="base" id="switcher-xxx"></input>
-   <label class="wrapper" for="switcher-xxx">
-      <span class="label">
-         <span class="label-off">&emsp";Off</span>
-         <span class="label-on">On&emsp";</span>
+   <input type="checkbox" id="switcher-xxx"></input>
+   <label class="switcher-label" for="switcher-xxx">
+      <span class="label-wrapper">
+         <span class="switcher-label-off">&emsp";Off</span>
+         <span class="switcher-label-on">On&emsp";</span>
       </span>
-      <span class="button"></span>
+      <span class="switcher-button"></span>
    </label>
 
 </div>
 -->
 */
 
-
+//_(1)
 
 
 const createSwitcher = (target) => {
    let _counter = 0;
    
-   const switcherId = "switcher"+ _counter++
-   //_( switcherId )
-   const switcher = create("div")
+   const switcherId = "switcher"+ _counter++,
+   switcherContainer = create("div")
       .setAttr({
-         class: 'switcher'
+         class: 'switcher-container'
       })
       .setCss({
          position: 'fixed',
@@ -40,68 +39,71 @@ const createSwitcher = (target) => {
       })
       .setText("DarkMode")
       .appendTo(target),
-      
+   
    inp = create("input")
       .setAttr({
          type: 'checkbox',
          id: switcherId
       })
-      .appendTo(switcher),
+      .appendTo(switcherContainer),
       
-   wrapper = create("label-switcher")
+   switcherLabel = create("label")
       .setAttr({
-         "class": "switcher-wrapper",
+         "class": "switcher-label",
          "for": switcherId
       })
-      .appendTo(switcher),
+      .appendTo(switcherContainer),
    
-   label = create("span")
+   labelWrapper = create("span")
       .setAttr({
-         class: "switcher-label"
+         class: "label-wrapper"
       })
-      .appendTo(wrapper),
-      
-   button = create("span")
-      .setAttr({
-         class: "switcher-button"
-      })
-      .appendTo(wrapper),
+      .appendTo(switcherLabel),
       
    off = create("span")
       .setAttr({
          class: "switcher-label-off"
       })
       .setText("Off")
-      .appendTo(label),
+      .appendTo(labelWrapper),
       
    on = create("span")
       .setAttr({
          class: "switcher-label-on"
       })
       .setText("On")
-      .appendTo(label)
+      .appendTo(labelWrapper),
    
-   return switcher
-};
-
-const switcher = createSwitcher(document.body);
-const addTransition = (elm) => {
+   button = create("span")
+      .setAttr({
+         class: "switcher-button"
+      })
+      .appendTo(switcherLabel)
+      
+   //o return inp
+   return { switcherContainer, switcherLabel }
+   // x return switcherContainer
+},
+addTransition = (elm) => {
    elm.setCss({
       transition: 'all 0.11s ease',
    })
+   
    elm.hasTransition = true
 }
 
 
-switcher.addEventListener('click', (e)=> {
+const { switcherContainer, switcherLabel } =  createSwitcher(document.body),
+html = document.documentElement,
+checkbox = switcherContainer.children[0]
+//_( checkbox.tagName )
+
+
+switcherLabel.addEventListener('click', (e) => {
    e.preventDefault()
-   
-   const html = document.documentElement
-   const checkbox = switcher.children[0]
-   
-   switcher.hasTransition ? true : addTransition(html)
-   
+   //_(999)
+   switcherContainer.hasTransition ? true : addTransition(html)
    
    checkbox.checked = !checkbox.checked
    html.classList.toggle('dark')
-})/**/
+})

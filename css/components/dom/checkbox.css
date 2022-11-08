@@ -1,0 +1,90 @@
+:root{
+   --checkbox-scale: 1rem;
+}
+
+form:has(input){
+   display: table;
+   margin: auto;
+}
+
+/* Hide the browser's default checkbox */
+input[type="checkbox"] {
+   position: relative;
+   cursor: pointer;
+   -webkit-appearance: none;
+   appearance: none;
+   width: var(--checkbox-scale);
+   height: var(--checkbox-scale);
+   vertical-align: middle; /* must for vertical centering */
+                           /* must specified in input element, not ::before, ::after  */
+}
+
+
+/*** custom checkbox ***
+ *    scale-safe
+ *    fallback to inital, default checkbox styling with '.initial' class
+ */
+input[type="checkbox"],
+input[type="checkbox"]::before,
+input[type="checkbox"]::after,
+input[type="checkbox"] + label{
+   font-size: var(--checkbox-scale);
+   font-size: inherit;
+}
+
+input[type="checkbox"]::before,
+input[type="checkbox"]::after{
+   content: '';
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   height: 100%;
+   width: 100%;
+   transform: translate(-50%, -50%);
+   border-radius: 0.25em;
+   box-sizing: border-box;
+}
+/*********
+   checkbox-base
+ ********/
+input[type="checkbox"]::before{
+   border: 0.15em solid #bbb;
+}
+/********
+   check symbol
+ ********/
+input[type="checkbox"]::after{
+   display: none;
+   content: '\2713';
+   text-align: center;
+   font-weight: 700;
+   color: #fff;
+}
+input[type="checkbox"] + label{
+   font-family: inherit;
+   font-weight: inherit;
+   margin-left: 0.3125em;
+   vertical-align: middle; /* must for vertical centering */
+}
+   /* :checked */
+input[type="checkbox"]:checked::before{
+   border: none;
+   background: royalblue;
+}
+input[type="checkbox"]:checked::after{
+   display: table;
+}
+
+/*******
+   initial style checkbox & label 
+ *******/
+input[type="checkbox"].initial,
+input[type="checkbox"].initial::before,
+input[type="checkbox"].initial::after,
+input[type="checkbox"].initial + label{
+   all: initial;
+   -webkit-appearance: auto;
+   appearance: auto;
+}
+input[type="checkbox"].initial{}

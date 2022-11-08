@@ -31,6 +31,8 @@
  * `background-clip` must be positioned after `background-color`
  **/
 .grad{/* purple-orange */
+   -webkit-background-clip: text;
    background-clip: text;
-   color: transparent;   
+   -webkit-text-fill-color: transparent;
+   color: transparent;
 }

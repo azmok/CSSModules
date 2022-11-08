@@ -1,6 +1,9 @@
 :root{
    --text-def: #292929;
+   
    --bg-def: #fffff8;
+   --bg-inlineCode: #e8e8e5;
+   --bg-monokai: #272822;
    
    --slate-800: #0f172a;
    --slate-700: #334155;
@@ -42,6 +45,19 @@
    --stone-300: #d6d3d1;
    --stone-400: #a8a29e;
    --stone-500: #78716c;
+   
+	--neutral-50: #fafafa;
+	--neutral-100: #f5f5f5;
+	--neutral-200: #e5e5e5;
+	--neutral-300: #d4d4d4;
+	--neutral-400: #a3a3a3;
+	--neutral-500: #737373;
+	--neutral-600: #525252;
+	--neutral-700: #404040;
+	--neutral-800: #262626;
+	--neutral-900: #171717;
+   
+   --color-codeblock: #aaa;
 }
 
 html{
@@ -62,30 +78,61 @@ a.def{
    background: none;
 }
 
-/* pre having code */
+pre{
+}
+/* <pre> of codeblock */
 pre:has(code){
-   background: var(--slate-800);
+   background: #272822;
 }
 
-/* code-block */
+/* <code> in codeblock */
 pre > code {
    background: transparent;
-   color: #aaa;
+   color: var(--color-codeblock);
 }
 
-/* inline-code */
+/* <code> of inline-code */
 *:not(pre) > code{
    color: var(--slate-800);
-   background: #e8e8e5;
+   background: var(--bg-inlineCode);
 }
+
+
+
 
 /* bullet */
 ul li::before {
    background: var(--slate-700);
 }
 
-figure blockquote,
-figure figcaption,
-figure figcaption a{
-   color: var(--slate-800);
+/* blockquote */
+figure,
+figure > blockquote,
+figure > figcaption,
+figure > figcaption a{
+   color: var(--neutral-500);/*
+   color: #76767c;*/
 }
+
+/* table */
+table.fix.column.col1 td:first-child{
+   background: #fff;
+}
+table.fix.row.row1 tr:first-child{
+   background: #fff;
+}
+
+/* code output */
+.output{
+   background: var(--bg-monokai);
+   color: var(--color-codeblock);
+}
+.output::before{
+   background: var(--bg-monokai);
+}
+
+
+.opa-7{
+   opacity: 0.7;
+}
+

@@ -1,0 +1,41 @@
+table{
+   display: table;
+   border-collapse: collapse;
+   overflow-x: auto;
+   overflow-y: auto;
+
+   max-width: 100%;
+}
+colgroup{}
+thead{}
+tbody{}
+tr{}
+th, td{
+   padding: 1em;
+   border: 1px solid #eee;
+}
+th{
+   border-bottom: 2px solid #eaeaea;
+}
+td{}
+
+/* 1 header column fixed */
+table.fix.column th,
+table.fix.column td{
+   left: 0;
+}
+table.fix.column.col1 th:first-child,
+table.fix.column.col1 td:first-child{
+   position: -webkit-sticky;
+   position: sticky;
+}
+
+/* 1 header row fixed */
+table.fix.row tr{
+   top: 0;
+}
+table.fix.row.row1 tr:first-child{
+   position: -webkit-sticky;
+   position: sticky;
+   z-index: 1;
+}

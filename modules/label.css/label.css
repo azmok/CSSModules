@@ -2,6 +2,14 @@
 @import '../../css/components/dom/paragraph.css';
 @import '../../css/components/barebone/layout.css';
 
+:root{
+   --indigo-50: #eef2ff;
+   --indigo-300: #a5b4fc;
+   --lime-50: #f7fee7;
+   --lime-300: #bef264;
+   --green-50: #f0fdf4;
+   --green-300: #86efac;
+}
 
 .label{
    padding: 1.75rem 2rem 1.75rem 3rem;
@@ -25,4 +33,12 @@
 html.dark .label{
    background: var(--amber-dark-bg) !important;
    border-left: 8px solid var(--amber-dark-border);
+}
+.label.ref{
+   background: var(--indigo-50);
+   border-left: 8px solid var(--indigo-300);
+}
+
+body div.label > h2{
+   margin-top: 0;
 }

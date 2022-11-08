@@ -43,22 +43,78 @@
 /* iPad.landscape*/
 @media (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
    .card.main{
-      width: 800px;
+      width: 820px;
    }
+}
+.nowrap{
+   white-space: nowrap;
+}
+.w-1{
+   width: 1rem;
+}
+.w-2{
+   width: 2rem;
+}
+.w-3{
+   width: 3rem;
+}
+.w-4{
+   width: 4rem;
+}
+.w-5{
+   width: 5rem;
+}
+.w-6{
+   width: 6rem;
+}
+.w-7{
+   width: 7rem;
+}
+.w-8{
+   width: 8rem;
+}
+.w-9{
+   width: 9rem;
+}
+.w-10{
+   width: 10rem;
 }
 
 
-
-.fullwidth{
+/* figure > img */
+figure.fullwidth{
    margin-right: -5rem;
    margin-left: -5rem;
    width: calc(100% + 10rem);
 }
-
+figure.halfwidth{
+border: 1px solid #aaa;
+   width: 50%;
+}
+figure.halfwidth > img + figcaption > a{
+   font-size: 0.75em;
+}
 figure > img + figcaption{
    margin-top: 0.5rem;
    padding: 0;
 }
+
+
+
+
+div.col3{
+   display: grid;
+   grid-template-columns: auto 20% auto;
+   grid-gap: 0px 20px;
+}
+div.col3 > *{
+}
+
+
+.pre-wrap{
+   white-space: pre-wrap;
+}
+
 
 /* margin-top */
 .mgt-0{
@@ -70,6 +126,25 @@ figure > img + figcaption{
 .mgt-1{
    margin-top: 1rem !important;
 }
+.mgt-2{
+   margin-top: 2rem !important;
+}
+.mgt-3{
+   margin-top: 3rem !important;
+}
+.mgt-4{
+   margin-top: 4rem !important;
+}
+.mgt-5{
+   margin-top: 5rem !important;
+}
+.mgt-6{
+   margin-top: 6rem !important;
+}
+.mgt-7{
+   margin-top: 7rem !important;
+}
+
 
 /* margin-bottom */
 .mgb-0{
@@ -81,6 +156,22 @@ figure > img + figcaption{
 .mgb-1{
    margin-bottom: 1rem !important;
 }
+.mgb-2{
+   margin-bottom: 2rem !important;
+}
+.mgb-3{
+   margin-bottom: 3rem !important;
+}
+.mgb-4{
+   margin-bottom: 4rem !important;
+}
+.mgb-5{
+   margin-bottom: 5rem !important;
+}
+.mgb-6{
+   margin-bottom: 6rem !important;
+}
+
 
 /* padding-top */
 .pdt-0{
@@ -108,6 +199,12 @@ figure > img + figcaption{
 }
 .pdb-1{
    padding-bottom: 1rem !important;
+}
+.pdb-2{
+   padding-bottom: 2rem !important;
+}
+.pdb-3{
+   padding-bottom: 3rem !important;
 }
 .pdb-15{
    padding-bottom: 1.5rem !important;

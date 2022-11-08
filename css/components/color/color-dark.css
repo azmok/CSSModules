@@ -4,6 +4,7 @@
    
    --dark-bg-color: #26241e;
    --dark-tx-color: #c4c4c4;
+   --dark-bd-color: #424240;
 }
 
 html.dark{
@@ -26,14 +27,30 @@ html.dark figure *{
    color: var(--dark-tx-color) !important;
 }
 
+/* inline code */
 html.dark *:not(pre) > code{
    background: var(--slate-700);
    color: var(--slate-200);
 }
 
+/* codeblock */
 html.dark pre:has(code){
    background: #363534 !important;
 }
+html.dark img{
+   filter: brightness(70%) sepia(10%);
+}
+
+html.dark table,
+html.dark table tr,
+html.dark table th,
+html.dark table td{
+   border-color: var(--dark-bd-color) !important;
+   background: rgba(0,0,0, 0.35) !important;
+   -webkit-backdrop-filter: blur(3px);
+   backdrop-filter: blur(3px);
+}
+
 
 /* dark mode when system dark mode enabled *
 @media (prefers-color-scheme: dark) {
