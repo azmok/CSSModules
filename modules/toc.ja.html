@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <title>toc</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="../../../pkg/CSSModules/css/_ini.css" />
+   <script src="../../../pkg/CSSModules/lib/Prism.js/_ini.js" type="module"></script>
+   <script src="../../../pkg/CSSModules/modules/_ini.js" type="module" defer></script>
+   <style>
+   p#demo1::before{
+   content: '\260E'; /* ☎️ */
+   }
+   .sticky{
+   position: -webkit-sticky;
+   position: sticky;
+   top: 0;
+   background: rgba(255,255,245, 0.7);
+   -webkit-backdrop-filter: blur(3px);
+   backdrop-filter: blur(3px);
+   }
+   </style>
+</head>
+<body>
+   
+   
+
+
+<div class="card main text en">
+
+
+   <h1 class="grad g1">Stying Table of Contents —MDNのWeb記事を理解する為に、必要な前提知識</h1>
+
+
+
+   <ul id="toc">
+      <li class="toc_h1" tagnumber="1">
+         <a href="#unicode-on-the-web">Unicode on the Web</a>
+         <ul>
+            <li class="toc_h2" tagnumber="2">
+               <a href="#unicode-in-html">Unicode in HTML</a>
+               <ul>
+                  <li class="toc_h3" tagnumber="3"><a href="#in-w3c-articles">in W3C articles</a></li>
+               </ul>
+            </li>
+            <li class="toc_h2" tagnumber="2">
+               <a href="#code-point-numbers">Code point numbers</a>
+               <ul>
+                  <li class="toc_h3" tagnumber="3"><a href="#example">Example</a></li>
+               </ul>
+            </li>
+            <li class="toc_h2" tagnumber="2"><a href="#unicode-in-css">Unicode in CSS</a></li>
+            <li class="toc_h2" tagnumber="2">
+               <a href="#unicode-in-js">Unicode in JS</a>
+               <ul>
+                  <li class="toc_h3" tagnumber="3"><a href="#1.-ascii-hexadecimal-escape-sequence">1. Ascii Hexadecimal Escape Sequence</a></li>
+                  <li class="toc_h3" tagnumber="3"><a href="#2.-utf16-hexadecimal-escape-sequence">2. UTF16 Hexadecimal Escape Sequence</a></li>
+                  <li class="toc_h3" tagnumber="3"><a href="#3-unicode-code-point-escape-sequence">3 Unicode Code Point Escape Sequence</a></li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+      <li class="toc_h1" tagnumber="1"><a href="#bonus">Bonus</a></li>
+      <li class="toc_h1" tagnumber="1">
+         <a href="#what-is-code-point?">What is Code Point?</a>
+         <ul>
+            <li class="toc_h2" tagnumber="2"><a href="#2.4-code-points-and-characters">2.4 Code Points and Characters</a></li>
+            <li class="toc_h2" tagnumber="2">
+               <a href="#reference">Reference</a>
+               <ul>
+                  <li class="toc_h3" tagnumber="3"><a href="#reference">Reference</a></li>
+                  <li class="toc_h3" tagnumber="3"><a href="#reference">Reference</a></li>
+                  <li class="toc_h3" tagnumber="3"><a href="#reference">Reference</a></li>
+               </ul>
+            </li>
+         </ul>
+      </li>
+   </ul>
+   
+   
+   
+   <h1 id="unicode-on-the-web">Unicode on the Web</h1>
+   <h2 id="unicode-in-html">Unicode in HTML</h2>
+   <p>There are three ways to display charactors indirectly in HTML</p>
+   <ol>
+      <li>Named Charactor Reference</li>
+      <li>Hexadecimal Numeric Charactor Reference</li>
+      <li>Decimal Numeric Charactor Reference</li>
+   </ol>
+   <p>(1) is a subset of charactors defined in <a href="https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references">"13.5 Named character references ーHTML WHATWG.org"</a>.
+   </p>
+   <p>(2),(3) are relating to Unicode.</p>
+   <p>Below table reveal relationships between Unicode Code Point and (1),(2),(3).</p>
+   <div class="sticky-wrapper">
+      <div class="sticky">
+         <table>
+            <colgroup>
+               <col>
+               <col>
+               <col>
+            </colgroup>
+            <thead>
+               <tr>
+                  <th>        </th>
+                  <th> あ  </th>
+                  <th> ☎️ </th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td> Unicode <a href="#codePoint">Code Point</a>      </td>
+                  <td> <code>U+3042</code> </td>
+                  <td> 	<code>U+0260E</code> </td>
+               </tr>
+               <tr>
+                  <td> (1)Named Charactor Reference    </td>
+                  <td> -  </td>
+                  <td> <code>&amp;phone;</code> </td>
+               </tr>
+               <tr>
+                  <td> (2)Hexadecimal Numeric Charactor Reference  </td>
+                  <td> <code>&amp;#x3042</code> </td>
+                  <td> <code>&amp;#x0260E</code> </td>
+               </tr>
+               <tr>
+                  <td> (3)Decimal Numeric Charactor Reference </td>
+                  <td> <code>&amp;#12354</code> </td>
+                  <td> <code>&amp;#9742</code> </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <p>The value of (3) is converted value of (2) to base 10</p>
+      <p>Thoese who not understand decimal, hexadecimal, number base, <a href="https://www.mathsisfun.com/numbers/bases.html">Number Bases ーMathIsFun.com</a> is awesome resource to understand those topics.</p>
+      <h3 id="in-w3c-articles">in W3C articles</h3>
+      <p>Articles in W3C international website described about Unicode and Escape Sequence in HTML</p>
+      <figure>
+         <blockquote class="preWrap">
+            <h2 id="code-point-numbers">Code point numbers</h2>
+            ... <b>values of numeric character references</b> (such as &amp;#x20AC; or &amp;#8364; for the euro sign €) <b>are interpreted as Unicode characters</b> – <b>no matter what encoding you use for your document</b>.
+         </blockquote>
+         <figcaption><a href="https://www.w3.org/International/questions/qa-escapes#cpnumbers">"Code point numbers &lt; Using character escapes in markup and CSS" —W3C Internationalization</a></figcaption>
+      </figure>
+   </div>
+   <h3 id="example">Example</h3>
+   <pre><code class="language-markup">&lt;p&gt;this is &amp;phone;&lt;/p&gt;   &lt;!-- named --&gt;
+&lt;p&gt;this is &amp;#x0260E;&lt;/p&gt; &lt;!-- hex --&gt;
+&lt;p&gt;this is &amp;#9742;&lt;/p&gt;   &lt;!-- decimal --&gt;
+</code></pre>
+   <section class="output">
+      <p>this is ☎</p>
+      <p>this is ☎</p>
+      <p>this is ☎</p>
+   </section>
+   <h2 id="unicode-in-css">Unicode in CSS</h2>
+   <figure>
+      <blockquote>CSS represents escaped characters in a different way. Escapes start with a backslash followed by the hexadecimal number that represents the character's hexadecimal 'Unicode Code Point' value.</blockquote>
+      <figcaption>
+         <a href="https://www.w3.org/International/questions/qa-escapes#cssescapes">"CSS ESCAPES &lt; Using character escapes in markup and CSS" —W3C Internationalization</a>
+      </figcaption>
+   </figure>
+   <pre><code class="language-markup">&lt;p&gt;this is paragraph.&lt;/p&gt;
+</code></pre>
+   <pre><code class="language-css">p::before{
+content: '\260E'; /* ☎️ */
+}
+</code></pre>
+   <section class="output">
+      <p id="demo1">this is paragraph.</p>
+   </section>
+   <h2 id="unicode-in-js">Unicode in JS</h2>
+   <p>There are three ways to input charactors indirectly as string in source code</p>
+   <ol>
+      <li>Ascii Hexadecimal Escape Sequence</li>
+      <li>UTF16 Hexadecimal Escape Sequence</li>
+      <li>Unicode Code Point Escape Sequence</li>
+   </ol>
+   <p><a href="#ref1">**</a></p>
+   <h3 id="1.-ascii-hexadecimal-escape-sequence">1. Ascii Hexadecimal Escape Sequence</h3>
+   <p><code>\x</code> <b>2HexDigits</b></p>
+   <p><b>2HexDigits</b> is two hexadecimal digits, e.g.</p>
+   <pre><code class="language-js">`\x3c' === '&lt;`
+</code></pre>
+   <p>Two-Hex-digits is corresponging hex digits and chars in ascii table
+      <a href="#ref2">**</a>
+   </p>
+   <h3 id="2.-utf16-hexadecimal-escape-sequence">2. UTF16 Hexadecimal Escape Sequence</h3>
+   <p><code>\u</code> <b>4HexDigits</b></p>
+   <p><b>4HexDigits</b> is four hexadecimal digits except five long hexadecimal digits and corresponging chars in <a href="https://unicode.org/charts/">‘Unicode Charactor Code’ Charts</a>.</p>
+   <div class="label">
+      'Unicode Code Point' and 'Unicode Charactor Code' is used interchangablly in this tutorial. It's ok to consider that meaning of two words are almost the same.
+   </div>
+   <p>Five long hexadecimal digits and corresponging chars in ‘Unicode Charactor Code’ Charts is represented as 4-hex-digits-pair described below example.</p>
+   <p><a href="#ref3">**</a></p>
+   <pre><code class="language-js">//  ok
+'\x0021' === '!'
+
+//  invalid!
+'\x1F60A' === '😊'   //'\x' must be followed 4 hex digits, not five!
+                  // Five-long hex digits escape seauence is illegal in js.
+                  // This is 32 bit encoding(UTF-32).
+
+//  ok
+'\uD83D\uDE0A' === '😊' // This is 16 bit encoding pair according to UTF-16 encoding system.
+                     // What is UTF-16 encoding system? ==&gt; ["Unicode character encoding" —IBM](https://www.ibm.com/docs/en/db2/11.5?topic=support-unicode-character-encoding)
+</code></pre>
+   <p>‘Unicode Code Point’ is originally 16 bit long, e.g. 4 hex digits long,</p>
+   <pre><code>   16 bit encoding ===
+    16 bit long ===
+         2 byte ===
+8 bit * 2 times ===
+        2 ** 16 ===
+         65,536 ===  // chars
+16 * 16 * 16 * 16 ===
+4 hex digits long
+</code></pre>
+   <p>But, 4 hex digits long(16 bit long) is less for listing more charactors in recent years. So, 5 hex digits long ‘Unicode Code Point’ has been appeared in recent spec of Unicode. If trying to converting 5 hex digits long code point to chars, 32 bit is required</p>
+   <pre><code>16 * 16 * 16 * 16 * 16 ===  
+  5 hex digits long ===  
+    1,048,576 chars  
+</code></pre>
+   <p>UTF16 Hexadecimal Escape Sequence is corresponging ‘Unicode Charactor Code’(Unicode Code Point) and chars in ‘Unicode Charactor Code’ Charts, except 5-long hex digits chars , e.g. emoticon(emoji), or a part of East Asian Scripts or South Asian Scripts, …etc.</p>
+   <p><a href="#ref4">**</a></p>
+   <h3 id="3-unicode-code-point-escape-sequence">3 Unicode Code Point Escape Sequence</h3>
+   <p><code>\u{</code> <strong><em>codePoint</em></strong> <code>}</code></p>
+   <p>In a nutshell, <a href="#codePoint"><strong><em>codePoint</em></strong></a> is hex numbers annotated under or besides charactors in Unicode Charactor Code Charts</p>
+   <figure class="fullwidth">
+      <img src="../src/codePoint1.jpg" alt="codePoint1 image">
+      <figcaption>
+         <a href="https://unicode.org/charts/">Latin Ligatures &lt; Latin &lt; Scripts &lt; Unicode 15.0 Character Code Charts —Unicode.org
+         </a>
+      </figcaption>
+   </figure>
+   <figure class="fullwidth">
+      <img src="../src/codePoint2.jpg" alt="codePoint2 image">
+      <figcaption>
+         <a href="https://unicode.org/charts/">CJK Extension A (6MB) &lt; East Asian Scripts &lt; Scripts &lt; Unicode 15.0 Character Code Charts —Unicode.org
+         </a>
+      </figcaption>
+   </figure>
+   <pre><code class="language-js">// invalid! Five-long hex digits escape sequence is illegal in js
+'\x1F60A' === '😊'
+
+// above problem solved in es6
+'\u{1F60A}' === '😊'
+</code></pre>
+   <p>Below link of Unicode.org list all ‘emoji’ as-is styles you can see on the web. <br>
+      <a href="https://unicode.org/emoji/charts/full-emoji-list.html">Full Emoji List, v15.0 &lt; Emoji Charts —Unicode.org</a>
+   </p>
+   <p>Also, below documents is specification of ‘emoji’</p>
+   <figure class="fullwidth">
+      <figcaption>Emoticons &lt; Emoji &amp; Pictographs &lt; Symbols and Punctuation &lt; Unicode 15.0 Character Code Charts —Unicode.org</figcaption>
+      <img src="../src/codePoint-emoticon.jpg" alt="codePoint-emoticon.jog">
+   </figure>
+   <h1 id="bonus">Bonus</h1>
+   <h1 id="what-is-code-point?">What is Code Point?</h1>
+   <figure>
+      <blockquote class="preWrap">
+         <h2 id="2.4-code-points-and-characters">2.4 Code Points and Characters</h2>
+         On a computer, abstract characters are encoded internally as numbers. To create a complete character encoding, it is necessary to define the list of all characters to be encoded and to establish systematic rules for how the numbers represent the characters.<br>
+         The range of integers used to code the abstract characters is called the codespace. A particular integer in this set is called a code point. When an abstract character is mapped or assigned to a particular code point in the codespace, it is then referred to as an encoded character.<br>
+         In the Unicode Standard, the codespace consists of the integers from 0 to 10FFFF16, comprising 1,114,112 code points available for assigning the repertoire of abstract characters.<br>
+         There are constraints on how the codespace is organized, and particular areas of the codespace have been set aside for encoding of certain kinds of abstract characters or for other uses in the standard. For more on the allocation of the Unicode codespace, see Section 2.8, Unicode Allocation.
+         <img src="../src/code-point.jpg" alt="codePointImage">
+         <p>Figure 2–8 illustrates the relationship between abstract characters and code points, which together constitute encoded characters. Note that some abstract characters may be associated with multiple, separately encoded characters (that is, be encoded “twice”). In other instances, an abstract character may be represented by a sequence of two (or more) other encoded characters. The solid arrows connect encoded characters with the abstract characters that they represent and encode.
+         </p>
+      </blockquote>
+      <figcaption><a href="https://www.unicode.org/versions/Unicode15.0.0/ch02.pdf#G25564">2.4 Code Points and Characters —The Unicode® Standard
+         Version 15.0 – Core Specification</a>
+      </figcaption>
+      <p></p>
+   </figure>
+   <h2 id="reference">Reference</h2>
+   <ol>
+      <li><a href="https://www.w3.org/International/questions/qa-escapes">“Using character escapes in markup and CSS” —W3C Internationalization</a></li>
+      <li><a href="https://www.w3.org/International/tutorials/tutorial-char-enc/">“Handling character encodings in HTML and CSS (tutorial)” —W3C Internationalization</a></li>
+      <li><a href="https://www.w3.org/International/articles/definitions-characters/">“Character encodings: Essential concepts” —W3C Internationalization</a></li>
+      <li><a href="https://www.w3.org/International/questions/qa-what-is-encoding">“Character encodings for beginners” —W3C Internationalization</a></li>
+      <li><a href="https://www.w3.org/International/getting-started/characters">“Character Sets and Encodings” —W3C Internationalization</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Code_point">“Code Point” —MDN</a></li>
+      <li><a href="https://www.unicode.org/versions/Unicode15.0.0/ch02.pdf#G25564">“2.4 Code Points and Characters” —The Unicode® Standard
+         Version 15.0 – Core Specification</a>
+      </li>
+      <li><a href="https://html.spec.whatwg.org/multipage/syntax.html#character-references">13.1.4 Character references —HTML WHATWG.org</a></li>
+      <li><a href="https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references">13.5 Named character references —HTML WHATWG.org</a></li>
+   </ol>
+   <div id="ref1" class="label ref">
+      <h3 class="mgt-0 pdb-1" id="reference">Reference</h3>
+      <ul class="mgt-0">
+         <li>
+            <a href="https://262.ecma-international.org/13.0/#sec-literals-string-literals">"12.8.4 String Literals &lt; ECMAScript-262, 13th" —ECMAECMA-262 - Ecma International
+            </a>
+         </li>
+      </ul>
+   </div>
+   <div id="ref2" class="label ref">
+      <h3 class="mgt-0 pdb-1" id="reference">Reference</h3>
+      <ul class="mgt-0">
+         <li><a href="https://www.ibm.com/docs/en/xl-c-and-cpp-aix/13.1.0?topic=details-hexadecimal-escape-sequence">"Hexadecimal Escape Sequence" —IBM</a></li>
+         <li><a href="https://en.wikipedia.org/wiki/Escape_sequences_in_C#Table_of_escape_sequences">"Table of escape sequences" &lt; Escape sequences in C —Wikipedia</a></li>
+         <li><a href="https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html">"ASCII Table" —CMU.edu</a></li>
+      </ul>
+   </div>
+   <div id="ref4" class="label ref">
+      <h3 class="mgt-0 pdb-1" id="reference">Reference</h3>
+      <ul class="mgt-0">
+         <li>
+            <a href="https://www.ibm.com/docs/en/db2/11.5?topic=support-unicode-character-encoding">"Unicode character encoding" —IBM
+            </a>
+         </li>
+      </ul>
+   </div>
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+
+</div>
+
+
+
+
+</body>
+</html>

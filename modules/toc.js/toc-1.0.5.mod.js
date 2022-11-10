@@ -89,7 +89,7 @@ organizeToc = (ul, headersArr) => {
    headersArr.map((hx, i) => {
       let li = create('li'),
       a =  create('a'),
-      jumpUrl = '#' + hx.text,
+      jumpUrl = '#' + hx.text.toLowerCase().split(' ').join('-'),
       className = hx.tagName.toLowerCase()
       
       let currHNum = parseInt( hx.tagName.match(/\d/).at(0) )
@@ -229,7 +229,7 @@ createToc = () => {
    let headers = getHeaders(),
    toc = document.querySelector('#toc')
    //_( document.body.innerHTML )
-   organizeToc(toc, headers)
+   return organizeToc(toc, headers)
 },
 setIdAnchor = () => {
    /**  Side effect to DOM
@@ -238,23 +238,30 @@ setIdAnchor = () => {
    let headers = getHeaders()
    
    headers.map(hx => {
-      hx.element.setAttribute('id', hx.text )
+      //hx.element.setAttribute('id', hx.text )
+      const text = hx.text.toLowerCase().split(' ').join('-')
+      //_( text )
+      hx.element.setAttribute('id', text )
    })
-},
-insertToc = (str1, str2) => {
-   let toc = create("ul")
+}
+
+function insertToc(str1, str2){
+   let tocRoot = create("ul")
       .setAttr({
 		   id: 'toc'
       }),
-   str = str1 + toc.outerHTML + str2
-	//_( str )
-   $$('body')[0].innerHTML = str
+   str = str1 + tocRoot.outerHTML + str2,
+   toc;
    
-   createToc()
-
-   setIdAnchor();
-},
-detectToc = () => {
+   $$('body')[0].innerHTML = str
+   //
+   setIdAnchor()
+   //
+   toc = createToc()
+   
+   return toc
+}
+function detectToc(){
    let html_str = $$('body')[0].innerHTML,
    regex_toc_before = /[\w\W]*?(?=\[toc\])/g,
    regex_toc_after = /(\[toc\])([\w\W]*)/gm,
@@ -262,16 +269,12 @@ detectToc = () => {
    res2 = regex_toc_after.exec(html_str)
 
    if( res1 && res1.length ){
-      insertToc(res1, res2[2])
+      return insertToc(res1, res2[2])
    }
-},
-renderToc = () => {
-   detectToc()
 }
-renderToc()
-
-export { renderToc }
-
-
-
-
+export default function renderToc(){
+   const toc = detectToc()
+   //_( toc.outerHTML )
+   //_( document.body.outerHTML )
+   return 
+}

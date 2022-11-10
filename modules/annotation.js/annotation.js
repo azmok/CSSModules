@@ -1,5 +1,5 @@
 import { _, $$, create, setAttr, appendTo } from 
-'/iCloud/azmtuts.blog/pkg/CSSModules@azmok/pkg/autil@azmok/autil-1.0.4.mod.js'
+'/iCloud/azmtuts.blog/pkg/CSSModules/pkg/autil/autil-1.0.4.mod.js'
 
 
 
@@ -45,7 +45,7 @@ Array.from(annos).map(anno => {
    
    anno.addEventListener('click', (e)=>{
       e.preventDefault()
-      _(1)
+      //_(1)
       const className = desc.className
       // in visible
       if( className.includes('visible') ){

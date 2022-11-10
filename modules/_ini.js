@@ -1,15 +1,16 @@
 import { _, create, setAttr, appendTo } from 
-'/iCloud/azmtuts.blog/pkg/CSSModules@azmok/pkg/autil@azmok/autil-1.0.4.mod.js'
+'/iCloud/azmtuts.blog/pkg/CSSModules/pkg/autil/autil-1.0.4.mod.js'
 
 
 
 
 import './toc.js/_ini.js'
-// import './annotation.js/_ini.js'
+import renderToc from './toc.js/toc-1.0.5.mod.js'
+//import './annotation.js/_ini.js'
 //import './darkModeSwitcher.js/_ini.js'
 
 /* relative to `.html` file that <link rel="stylesheet" ...> tag will be added */
-const url_label_css = '/iCloud/azmtuts.blog/pkg/CSSModules@azmok/modules/label.css/_ini.css'
+const url_label_css = '/iCloud/azmtuts.blog/pkg/CSSModules/modules/label.css/_ini.css'
 // css
 create('link')
    .setAttr({
@@ -34,13 +35,11 @@ const counterStore = (initVal) => {
 },
 counter = counterStore(0)
 
-document.addEventListener('click', () => {
-   import('./annotation.js/_ini.js')
-   
-   if( counter.value() === 0 ){
-      //_( counter.value() )
+
+
+
+Promise.resolve( renderToc() )
+   .then(val => {
+      import('./annotation.js/_ini.js')
       import('./darkModeSwitcher.js/_ini.js')
-   }
-   counter.increment()
-})
-/**/
+   })

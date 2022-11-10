@@ -35,3 +35,7 @@ pre[class*="language-"]{  /* highlighted codeblock */
 pre:not([class*="language-"]) > code:not([class*="language-"]){
    font-family: var(--font-code-jp2);
 }
+
+.bold{
+   font-weight: 700 !important;
+}
