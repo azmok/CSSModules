@@ -91,14 +91,5 @@ ul li::before {
 
 img{
    display: block;
-   width: 100%;
-}
-
-.italic{
-   font-style: italic;
-}
-
-.fsz-l{
-   font-size: 1.25em !important;
-   font-weight: 700 !important;
+   width: 100%; /* necessary */
 }

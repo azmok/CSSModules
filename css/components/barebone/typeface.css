@@ -39,3 +39,6 @@ pre:not([class*="language-"]) > code:not([class*="language-"]){
 .bold{
    font-weight: 700 !important;
 }
+.italic{
+   font-style: italic !important;
+}

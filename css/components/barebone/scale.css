@@ -9,20 +9,20 @@ html{
 }
 
 .fsz-90{
-   font-size: 90%;
+   font-size: 90% !important;
 }
 .fsz-80{
-   font-size: 80%;
+   font-size: 80% !important;
 }
 
 .fsz-l{
-   font-size: 1.5rem;
+   font-size: 1.5rem !important;
 }
 .fsz-m{
-   font-size: 1.125rem;
+   font-size: 1.125rem !important;
 }
-.fsz-base{
-   font-size: 1rem;
+.fsz-normal{
+   font-size: 1rem !important;
 }
 .fsz-s{
    font-size: 0.8125rem !important;
@@ -30,6 +30,6 @@ html{
 .fsz-xs{
    font-size: 0.75rem !important;
 }
-body .main.text .title{
-   font-size: 2rem;
+.title{
+   font-size: 2rem !important;
 }
