@@ -20,15 +20,16 @@ code{
 }
 
 /* code block */
-pre > code,
+pre > code,       /* <code> of code-block */
 pre[class*="language-"] > code,
 pre > code[class*="language-"]{   
    padding-left: 0;
 }
-
-   /* no class `pre > code` */
-pre:not([class*="language-"]) > code,
-pre > code:not([class*="language-"]){
+pre:has(code),       /* <pre> of code-block */
+pre > code,          /* <code> of code-block */
+pre[class*="language-"] > code,
+pre > code[class*="language-"]{ 
+   font-style: normal;
 }
 
 
@@ -39,4 +40,10 @@ pre > code:not([class*="language-"]),
 pre:has( code:not([class*="language-"]) ){
    letter-spacing: -0.04em;
    font-weight: 300;
+}
+
+
+pre.command{
+   background: #2e2e2c;
+   color: #ccd;
 }

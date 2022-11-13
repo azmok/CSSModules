@@ -1,0 +1,31 @@
+/* for visibility-friendly css *
+body > * > :first-child{
+   box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.1);
+}
+/**/
+
+dl{
+   font-size: inherit;
+   display: table;
+}
+dt, dd{/*
+   border: 1px solid #ccc;*/
+}
+dt{
+   font-weight: 700;
+   
+}
+dd{
+   padding-left: 1em;
+   border-top: none;
+   font-size: 0.875em;
+   opacity: 0.7;
+}
+dt:not(:first-of-type){
+   margin-top: 0.75em;
+}
+
+body div dt,
+body div dd{
+   margin-top: 0;
+}

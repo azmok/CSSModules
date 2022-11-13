@@ -42,3 +42,11 @@ html.dark .label{
 body div.label > h2{
    margin-top: 0;
 }
+
+
+
+.label.caution{
+   color: var(--red-500);
+   border-left: 8px solid var(--red-500);
+   background: var(--red-50);
+}

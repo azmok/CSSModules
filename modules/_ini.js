@@ -1,5 +1,5 @@
 import { _, create, setAttr, appendTo } from 
-'/iCloud/azmtuts.blog/pkg/CSSModules/pkg/autil/autil-1.0.4.mod.js'
+'/iCloud/azmtuts.youtube/pkg/CSSModules/pkg/autil/autil-1.0.4.mod.js'
 
 
 
@@ -10,7 +10,7 @@ import renderToc from './toc.js/toc-1.0.5.mod.js'
 //import './darkModeSwitcher.js/_ini.js'
 
 /* relative to `.html` file that <link rel="stylesheet" ...> tag will be added */
-const url_label_css = '/iCloud/azmtuts.blog/pkg/CSSModules/modules/label.css/_ini.css'
+const url_label_css = '/iCloud/azmtuts.youtube/pkg/CSSModules/modules/label.css/_ini.css'
 // css
 create('link')
    .setAttr({

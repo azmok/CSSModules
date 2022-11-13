@@ -8,9 +8,9 @@ import { _, create, setAttr, appendTo } from
 
 /* relative to .html file below tags attached */
 const url_annotation_js =
-   '/iCloud/azmtuts.blog/pkg/CSSModules/modules/annotation.js/annotation.js',
+   '/iCloud/azmtuts.youtube/pkg/CSSModules/modules/annotation.js/annotation.3.js',
 url_annotation_css =
-   '/iCloud/azmtuts.blog/pkg/CSSModules/modules/annotation.js/annotation.css'
+   '/iCloud/azmtuts.youtube/pkg/CSSModules/modules/annotation.js/annotation.css'
 // js
 create('script')
    .setAttr({

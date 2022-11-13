@@ -21,18 +21,16 @@
    --font-serif: 'Source Serif 4', serif;
    --font-serif-jp: 'Source Serif 4', 'Noto Serif JP', serif;
    
-   --font-code: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-   --font-code-jp: 'Fira Code', 'Source Han Code JP', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-   --font-code-jp2: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace, 'Source Han Sans';
+   --font-code: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+   --font-code-jp: 'Fira Code', 'Source Han Code JP', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+   --font-code-jp2: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace, 'Source Han Sans';
 }
 
-code, /* inline-code */
+code,           /* inline-code */
+pre:has(code),  /* <pre> of code-block */
+pre > code,     /* <code> of  code-block */
 code[class*="language-"], /* highlighted codeblock */
 pre[class*="language-"]{  /* highlighted codeblock */
-   font-family: var(--font-code-jp2);
-}
-   /* no class `pre > code` */
-pre:not([class*="language-"]) > code:not([class*="language-"]){
    font-family: var(--font-code-jp2);
 }
 
@@ -41,4 +39,20 @@ pre:not([class*="language-"]) > code:not([class*="language-"]){
 }
 .italic{
    font-style: italic !important;
+}
+.normal, 
+.normal *{
+   font-style: normal !important;
+}
+.sans, 
+.sans *{
+   font-family: var(--font-sans-jp) !important;
+}
+.serif, 
+.serif *{
+   font-family: var(--font-serif-jp) !important;
+}
+.font-code,
+.font-code *{
+   font-family: var(--font-code-jp2) !important;
 }
