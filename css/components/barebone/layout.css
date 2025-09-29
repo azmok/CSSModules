@@ -87,6 +87,8 @@ figure.fullwidth{
    margin-right: -5rem;
    margin-left: -5rem;
    width: calc(100% + 10rem);
+   
+   /* box-shadow: 0 0 3px 6px rgba(30,30,30,0.4); */
 }
 figure.halfwidth{
 border: 1px solid #aaa;
@@ -99,8 +101,9 @@ figure > img + figcaption{
    margin-top: 0.5rem;
    padding: 0;
 }
-
-
+figure > img{
+   border: 1px solid #cbd4c9;
+}
 
 
 div.col3{

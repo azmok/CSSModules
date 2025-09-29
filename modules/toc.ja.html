@@ -4,9 +4,9 @@
    <meta charset="UTF-8" />
    <title>toc</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="../../../pkg/CSSModules/css/_ini.css" />
-   <script src="../../../pkg/CSSModules/lib/Prism.js/_ini.js" type="module"></script>
-   <script src="../../../pkg/CSSModules/modules/_ini.js" type="module" defer></script>
+<link rel="stylesheet" href="../css/_ini.css" />
+   <script src="../lib/Prism.js/_ini.js" type="module"></script>
+   <script src="_ini.js" type="module" defer></script>
    <style>
    p#demo1::before{
    content: '\260E'; /* ☎️ */
@@ -224,34 +224,43 @@ content: '\260E'; /* ☎️ */
    <h3 id="3-unicode-code-point-escape-sequence">3 Unicode Code Point Escape Sequence</h3>
    <p><code>\u{</code> <strong><em>codePoint</em></strong> <code>}</code></p>
    <p>In a nutshell, <a href="#codePoint"><strong><em>codePoint</em></strong></a> is hex numbers annotated under or besides charactors in Unicode Charactor Code Charts</p>
+   
    <figure class="fullwidth">
-      <img src="../src/codePoint1.jpg" alt="codePoint1 image">
+      <img src="../src/img/codePoint1.jpg" alt="codePoint1 image">
       <figcaption>
          <a href="https://unicode.org/charts/">Latin Ligatures &lt; Latin &lt; Scripts &lt; Unicode 15.0 Character Code Charts —Unicode.org
          </a>
       </figcaption>
    </figure>
+   
    <figure class="fullwidth">
-      <img src="../src/codePoint2.jpg" alt="codePoint2 image">
+      <img src="../src/img/codePoint2.jpg" alt="codePoint2 image">
       <figcaption>
          <a href="https://unicode.org/charts/">CJK Extension A (6MB) &lt; East Asian Scripts &lt; Scripts &lt; Unicode 15.0 Character Code Charts —Unicode.org
          </a>
       </figcaption>
    </figure>
+   
    <pre><code class="language-js">// invalid! Five-long hex digits escape sequence is illegal in js
 '\x1F60A' === '😊'
 
 // above problem solved in es6
 '\u{1F60A}' === '😊'
 </code></pre>
+
    <p>Below link of Unicode.org list all ‘emoji’ as-is styles you can see on the web. <br>
       <a href="https://unicode.org/emoji/charts/full-emoji-list.html">Full Emoji List, v15.0 &lt; Emoji Charts —Unicode.org</a>
    </p>
    <p>Also, below documents is specification of ‘emoji’</p>
+   
    <figure class="fullwidth">
-      <figcaption>Emoticons &lt; Emoji &amp; Pictographs &lt; Symbols and Punctuation &lt; Unicode 15.0 Character Code Charts —Unicode.org</figcaption>
-      <img src="../src/codePoint-emoticon.jpg" alt="codePoint-emoticon.jog">
+      <img src="../src/img/codePoint-emoticon.jpg" alt="codePoint-emoticon.jpg">
+         <figcaption>
+            <a href="https://www.unicode.org/emoji/charts/full-emoji-list.html">Full Emoji List, v17.0 — Unicode.org
+         </figcaption>
+      </a>
    </figure>
+   
    <h1 id="bonus">Bonus</h1>
    <h1 id="what-is-code-point?">What is Code Point?</h1>
    <figure>
@@ -261,7 +270,7 @@ content: '\260E'; /* ☎️ */
          The range of integers used to code the abstract characters is called the codespace. A particular integer in this set is called a code point. When an abstract character is mapped or assigned to a particular code point in the codespace, it is then referred to as an encoded character.<br>
          In the Unicode Standard, the codespace consists of the integers from 0 to 10FFFF16, comprising 1,114,112 code points available for assigning the repertoire of abstract characters.<br>
          There are constraints on how the codespace is organized, and particular areas of the codespace have been set aside for encoding of certain kinds of abstract characters or for other uses in the standard. For more on the allocation of the Unicode codespace, see Section 2.8, Unicode Allocation.
-         <img src="../src/code-point.jpg" alt="codePointImage">
+         <img src="../src/img/code-point.jpg" alt="codePointImage">
          <p>Figure 2–8 illustrates the relationship between abstract characters and code points, which together constitute encoded characters. Note that some abstract characters may be associated with multiple, separately encoded characters (that is, be encoded “twice”). In other instances, an abstract character may be represented by a sequence of two (or more) other encoded characters. The solid arrows connect encoded characters with the abstract characters that they represent and encode.
          </p>
       </blockquote>
