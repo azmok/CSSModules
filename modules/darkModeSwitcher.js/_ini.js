@@ -1,12 +1,12 @@
 import { _, create, setAttr, appendTo } from 
-'/iCloud/azmtuts.blog/pkg/CSSModules/pkg/autil/autil-1.0.4.mod.js'
+'../../lib/autil-1.0.4.mod.js'
 
 const doDarkModeSwitcher = () => {
    /* relative to `.html` file script attached */
    const body = document.querySelector('body'),
    head = document.head,
-   url_dmSwitcher_js = `/iCloud/azmtuts.blog/pkg/CSSModules/modules/darkModeSwitcher.js/darkModeSwitcher.js`,
-   url_dmSwitcher_css = `/iCloud/azmtuts.blog/pkg/CSSModules/modules/darkModeSwitcher.js/darkModeSwitcher.css`
+   url_dmSwitcher_js = `../modules/darkModeSwitcher.js/darkModeSwitcher.js`,
+   url_dmSwitcher_css = `../modules/darkModeSwitcher.js/darkModeSwitcher.css`
    
    // js
    create('script')

@@ -6,9 +6,13 @@
 
    <link rel="stylesheet" href="../css/_ini.css" />
    <script type="module" src="../js/_ini.js" defer></script>
-   <script type="module" src="../lib/Prism.js/_ini.js" defer></script>
-   <script type="module" src="/modules/_ini.js" defer></script>
-   
+  <!-- <script type="module" src="../lib/Prism.js/_ini.js" defer></script> -->
+   <script type="module" src="../modules/_ini.js" defer></script>
+   <script src="../modules/darkModeSwitcher.js/darkModeSwitcher.js" type="module"></script>
+   <script type="module">
+      import DarkModeSwitcher from "../modules/darkModeSwitcher.js/darkModeSwitcher.js"
+      new DarkModeSwitcher("../modules/darkModeSwitcher.js/darkModeSwitcher.css")
+   </script>
    
    <title>Document</title>
 </head>

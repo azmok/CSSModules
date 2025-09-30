@@ -31,7 +31,7 @@
  *  - 思っていたより目次の階層処理に手間取った
  */
 
-import { _, $$, appendTo, toArray, type, create, setAttr } from '../../js/autil-1.0.4.mod.js'
+import { _, $$, appendTo, toArray, type, create, setAttr } from '../../lib/autil-1.0.4.mod.js'
 import flatten from './flatten.js'
 import getElementsHierarchyAsObject from './getElementsHierarchyAsObject.mod.js'
 
