@@ -27,11 +27,11 @@ For Japanes developers wrting articles or managing bloging website without hussl
 # Example
 ## No-styling
 Environment: iPad Air 3, Textastic
-![no-styling image](src/img/no-styling.jpeg)
+![no-styling image](src/img/noStyled.jpg)
 
 ## Styled with CSS Module
 Environment: iPad Air 3, Textastic
-![styled image](src/img/styled.jpeg)
+![styled image](src/img/styled.jpg)
 
 
 
